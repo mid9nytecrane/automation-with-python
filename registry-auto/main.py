@@ -1,4 +1,4 @@
-import os
+import os,sys
 import re
 import difflib
 from getpass import getpass
@@ -7,7 +7,8 @@ from playwright.sync_api import sync_playwright
 import subprocess
 from dotenv import load_dotenv
 
-
+base_path = os.path.dirname(sys.executable) if getattr(sys, "frozen", False) else os.path.dirname(__file__)
+load_dotenv(os.path.join(base_path, ".env"))
 
 load_dotenv() # reads .env and loads its content into  the environment
 
