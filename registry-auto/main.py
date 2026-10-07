@@ -15,7 +15,8 @@ load_dotenv() # reads .env and loads its content into  the environment
 PC_USRNAME = os.getlogin()
 #BASE_URL = "http://127.0.0.1:8002/" # testing on local machine
 BASE_URL = os.getenv("BASE_URL")
-BASE_DIRECTORY = f"C:/Users/{PC_USRNAME}/Documents"
+#BASE_DIRECTORY = f"C:/Users/{PC_USRNAME}/Documents" #testing on local machine
+BASE_DIRECTORY = f"C:/Users/{PC_USRNAME}/Desktop"
 EXCEL_PATH = f"{BASE_DIRECTORY}" #"2026 NDC Members Temp.xls"  # .xls needs: pip install xlrd
 USERNAME = os.getenv("REGISTRY_USER", "admin")
 
@@ -331,7 +332,7 @@ def main():
 
     elif USERNAME == os.getenv("HARD"):
         password = os.getenv("HARDPASS")
-        
+
     else:
         password = getpass("Registry password: ")
 
